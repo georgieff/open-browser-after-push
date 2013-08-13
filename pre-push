@@ -1,0 +1,12 @@
+#!/bin/sh
+branch=`git rev-parse --abbrev-ref HEAD`
+username=`git config --get user.name`
+#need to check which remote is being pushed
+repourl=`git ls-remote --get-url`
+IFS='/' read -a array <<< "$repourl"
+arrlen=${#array[@]}-1
+reponame=${array[arrlen]}
+#echo "$username $branch ${reponame//.git/}"
+open "https://github.com/$username/${reponame//.git/}/tree/$branch"
+
+#https://github.com/<username>/<reponame>/tree/<branchname>
