@@ -11,3 +11,5 @@ reponame=${array[arrlen]} # get last array item (repo name)
 open "https://github.com/$username/${reponame//.git/}/tree/$branch"
 #placeholders
 #https://github.com/<username>/<reponame>/tree/<branchname>
+
+#https://github.com/georgieff/web-assets-development/compare/<remoteuser>:<remote-branch>...<my-branch>
